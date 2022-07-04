@@ -9,9 +9,9 @@ const StudentView = props => {
                 {LABEL["Name.label"].value}:
             </label>
             <input id='name' type="text" value={nameValue} onChange={handleNameChange}/>
-            <AppButton onClick={handleSubmit} label={LABEL["ChangeName.label"].value}/>
+            <AppButton handleClick={handleSubmit} label={LABEL["ChangeName.label"].value}/>
             <div>
-                <AppButton onClick={handleAddAgeClick} label={LABEL["AddAge.label"].value}/>
+                <AppButton handleClick={handleAddAgeClick} label={LABEL["AddAge.label"].value}/>
             </div>
             <div>{student.name} {student.age}</div>
         </>
