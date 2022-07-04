@@ -1,9 +1,9 @@
-import StudentView from "./features/student/StudentView";
+import Student from "./features/student/Student";
 
 function App() {
     return (
         <>
-            <StudentView/>
+            <Student/>
         </>
     );
 }
