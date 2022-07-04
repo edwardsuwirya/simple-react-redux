@@ -8,17 +8,11 @@ class StudentView extends Component {
         this.state = {nameValue: ''};
     }
 
-    handleNameChange = (event) => {
-        this.setState({nameValue: event.target.value});
-    }
+    handleNameChange = (event) => this.setState({nameValue: event.target.value});
 
-    handleAddAgeClick = () => {
-        this.props.addAgeAction();
-    }
+    handleAddAgeClick = () => this.props.addAgeAction();
 
-    handleSubmit = () => {
-        this.props.changeNameAction(this.state.nameValue);
-    }
+    handleSubmit = () => this.props.changeNameAction(this.state.nameValue);
 
     render() {
         const {student} = this.props
