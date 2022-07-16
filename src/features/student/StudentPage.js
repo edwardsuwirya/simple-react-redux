@@ -1,9 +1,8 @@
 import {Component} from "react";
 import {connect} from "react-redux";
 import {addAgeAction, changeNameAction} from "./state/StudentAction";
-import StudentView from "./StudentView";
 
-class Student extends Component {
+class StudentPage extends Component {
     constructor(props) {
         super(props);
         this.state = {nameValue: ''};
@@ -17,13 +16,13 @@ class Student extends Component {
 
     render() {
         return (
-            <StudentView
-                nameValue={this.state.nameValue}
-                handleNameChange={this.onNameChange}
-                handleSubmit={this.onSubmit}
-                handleAddAgeClick={this.onAddAgeClick}
-                student={this.props.student}
-            />
+            this.props.view({
+                nameValue: this.state.nameValue,
+                handleNameChange: this.onNameChange,
+                handleSubmit: this.onSubmit,
+                handleAddAgeClick: this.onAddAgeClick,
+                student: this.props.student
+            })
         )
     }
 }
@@ -35,4 +34,4 @@ const mapDispatchToProps = {
 const mapStateToProps = state => {
     return {student: state.studentReducer};
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Student);
+export default connect(mapStateToProps, mapDispatchToProps)(StudentPage);
