@@ -1,10 +1,11 @@
-import Student from "./features/student/Student";
+import StudentPage from "./features/student/StudentPage";
+import StudentView from "./features/student/StudentView";
 import StudentBook from "./features/book/StudentBook";
 
 function App() {
     return (
         <>
-            <Student/>
+            <StudentPage view={StudentView}/>
             <StudentBook/>
         </>
     );
