@@ -5,12 +5,12 @@ const bookInitialState = {
     books: []
 }
 
-export function bookReducer(state = bookInitialState, action) {
+export function studentBookReducer(state = bookInitialState, action) {
     switch (action.type) {
         case STUDENT_ADD_BOOK:
             return Object.assign({}, state, {
                 student: action.payload.student,
-                books: [...state.books, action.payload.book]
+                books: [...state.books, ...action.payload.book]
             })
         default:
             return state

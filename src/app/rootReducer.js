@@ -1,12 +1,12 @@
 import {combineReducers} from 'redux';
 import {studentReducer} from '../features/student/state/StudentReducer';
-import {bookReducer} from "../features/book/state/reducers";
+import {studentBookReducer} from "../features/studentBook/state/StudentBookReducer";
 
 
 export function rootReducer() {
     return combineReducers({
         studentReducer,
-        bookReducer,
+        bookReducer: studentBookReducer,
     })
 }
 

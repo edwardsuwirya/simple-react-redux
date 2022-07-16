@@ -11,5 +11,14 @@ export const LABEL = {
     },
     'Name.label': {
         value: 'Nama'
-    }
+    },
+    'Book.label': {
+        value: 'Buku'
+    },
+    'AddBook.label': {
+        value: 'Tambah Buku',
+    },
+    'StudentBook.submit': {
+        value: 'Simpan Buku Murid',
+    },
 };

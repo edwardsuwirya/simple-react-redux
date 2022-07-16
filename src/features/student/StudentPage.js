@@ -21,7 +21,8 @@ class StudentPage extends Component {
                 handleNameChange: this.onNameChange,
                 handleSubmit: this.onSubmit,
                 handleAddAgeClick: this.onAddAgeClick,
-                student: this.props.student
+                student: this.props.student,
+                books: this.props.studentBook.books
             })
         )
     }
@@ -32,6 +33,6 @@ const mapDispatchToProps = {
     changeNameAction
 }
 const mapStateToProps = state => {
-    return {student: state.studentReducer};
+    return {student: state.studentReducer, studentBook: state.bookReducer,};
 };
 export default connect(mapStateToProps, mapDispatchToProps)(StudentPage);
