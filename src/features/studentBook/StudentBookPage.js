@@ -8,37 +8,25 @@ class StudentBookPage extends Component {
         super(props);
         this.state = {
             newBookValue: '',
-            books: []
         }
     }
 
     onNewBookChange = (event) => this.setState({newBookValue: event.target.value});
     onSubmitStudentBook = () => {
         this.props.addBookAction({
-            student: this.props.student,
-            book: this.state.books
+            student: this.props.student.name,
+            book: this.state.newBookValue
         });
-        this.setState({
-            books: []
-        })
-    };
-    onAddBook = () => {
-        this.setState((prevState) => {
-            return {
-                books: [...prevState.books, this.state.newBookValue]
-            }
-        })
     };
 
     render() {
         return (
             this.props.view({
                 newBookValue: this.state.newBookValue,
-                handleAddBook: this.onAddBook,
                 handleSubmit: this.onSubmitStudentBook,
                 handleNewBookChange: this.onNewBookChange,
                 student: this.props.student,
-                books: this.state.books
+                books: this.props.studentBook.books
             })
         )
     }
