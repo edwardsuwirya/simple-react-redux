@@ -5,8 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 import {configureStore} from "./app/store";
+import BookService from "./services/BookService";
+import {register} from "./deps";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+(_ => {
+    register('BookService', BookService())
+})()
 const store = configureStore()
 root.render(
     <React.StrictMode>

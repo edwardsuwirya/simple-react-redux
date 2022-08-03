@@ -3,6 +3,7 @@ import {Component} from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import BookService from "../../services/BookService";
+import {withDep} from "../../components/WIthDep";
 
 class StudentBookPage extends Component {
     constructor(props) {
@@ -65,5 +66,5 @@ StudentBookPage.propTypes = {
     changeNameAction: PropTypes.func,
     view: PropTypes.func
 }
-export default connect(mapStateToProps, mapDispatchToProps)(StudentBookPage);
+export default connect(mapStateToProps, mapDispatchToProps)(withDep(StudentBookPage, ['BookService']));
 
