@@ -10,7 +10,7 @@ export function studentBookReducer(state = bookInitialState, action) {
         case STUDENT_ADD_BOOK:
             return Object.assign({}, state, {
                 student: action.payload.student,
-                books: [...state.books, ...action.payload.book]
+                books: [...state.books, action.payload.book]
             })
         default:
             return state
