@@ -21,4 +21,7 @@ export const LABEL = {
     'StudentBook.submit': {
         value: 'Simpan Buku Murid',
     },
+    'StudentBook.post': {
+        value: 'Post',
+    },
 };

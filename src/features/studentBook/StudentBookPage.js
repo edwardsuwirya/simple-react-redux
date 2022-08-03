@@ -2,6 +2,7 @@ import {addStudentBookAction} from './state/StudentBookAction.js';
 import {Component} from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
+import BookService from "../../services/BookService";
 
 class StudentBookPage extends Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class StudentBookPage extends Component {
         this.state = {
             newBookValue: '',
         }
+        this.service = BookService();
     }
 
     onNewBookChange = (event) => this.setState({newBookValue: event.target.value});
@@ -19,12 +21,21 @@ class StudentBookPage extends Component {
         });
     };
 
+    onPostStudentBook = async () => {
+        try {
+            const response = await this.service.postBook(this.props.studentBook);
+            console.log(response);
+        } catch (e) {
+        }
+    }
+
     render() {
         return (
             this.props.view({
                 newBookValue: this.state.newBookValue,
                 handleSubmit: this.onSubmitStudentBook,
                 handleNewBookChange: this.onNewBookChange,
+                handlePostBooks: this.onPostStudentBook,
                 student: this.props.student,
                 books: this.props.studentBook.books
             })
